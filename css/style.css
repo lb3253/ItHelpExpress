@@ -1529,3 +1529,303 @@ tbody th {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
 }
+
+/* --------------------------------------------------------------------------
+   20. AI Automation package
+   -------------------------------------------------------------------------- */
+.section--automation {
+  position: relative;
+  background: linear-gradient(165deg, var(--color-navy) 0%, #14294F 55%, #17325F 100%);
+  color: var(--color-white);
+  overflow: hidden;
+}
+.section--automation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 15%, #000 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 15%, #000 20%, transparent 100%);
+  pointer-events: none;
+}
+.section--automation > .container { position: relative; z-index: 1; }
+.section--automation h2,
+.section--automation h3,
+.section--automation h4 { color: var(--color-white); }
+.section--automation p { color: rgba(255, 255, 255, 0.72); }
+.section--automation .eyebrow { color: #7FA8FF; }
+
+/* Every .section-head after the first one in this (long, multi-part)
+   section gets breathing room from the block above it. */
+.section--automation .section-head:not(:first-child) { margin-top: var(--space-16); }
+
+.automation-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--color-blue) 0%, #7C3AED 100%);
+  display: grid;
+  place-items: center;
+  margin: 0 auto var(--space-5);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.4);
+}
+.automation-icon svg { width: 26px; height: 26px; }
+
+/* Pain cards reuse the site's .card, darkened for this section */
+.section--automation .card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+}
+.section--automation .card:hover { border-color: rgba(255, 255, 255, 0.28); box-shadow: var(--shadow-xl); }
+.section--automation .card-icon { background: rgba(255, 255, 255, 0.12); color: #7FA8FF; }
+.automation-pain-card { border-left: 3px solid rgba(248, 113, 113, 0.7); }
+.automation-pain-card h3 { font-size: var(--text-lg); line-height: 1.35; }
+
+.automation-tagline {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: var(--space-8) 0 0;
+}
+.automation-tagline strong { color: #7FA8FF; }
+
+/* Setup fee cards */
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+.fee-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  backdrop-filter: blur(6px);
+  transition: border-color var(--transition), transform var(--transition);
+}
+.fee-card:hover { border-color: rgba(255, 255, 255, 0.28); transform: translateY(-3px); }
+.fee-card__tier {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7FA8FF;
+  margin-bottom: var(--space-2);
+}
+.fee-card__price {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+.fee-card__examples { font-size: var(--text-sm); color: rgba(255, 255, 255, 0.68); }
+.fee-note {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Retainer plan cards — same anatomy as .plan, styled for the dark section,
+   with a gradient-border treatment on the "Most Popular" tier. */
+.automation-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-6);
+  align-items: start;
+}
+.automation-plan { position: relative; height: 100%; transition: transform var(--transition); }
+.automation-plan:hover { transform: translateY(-3px); }
+.automation-plan__inner {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-navy);
+}
+.automation-plan__inner p { color: var(--color-text-muted); }
+
+.automation-plan--popular {
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 55%, #16A34A 100%);
+  box-shadow: var(--shadow-xl);
+}
+.automation-plan--popular .automation-plan__inner { border: none; }
+
+.automation-plan__addon-tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-blue);
+  background: var(--color-blue-light);
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+.automation-plan__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-navy);
+}
+.automation-plan__price {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1;
+  margin: var(--space-4) 0 var(--space-5);
+}
+.automation-plan__price span {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-left: 2px;
+}
+.automation-plan__best {
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--color-border);
+}
+.automation-plan .btn { margin-top: var(--space-5); }
+
+/* Testimonials */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+.testimonial {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  backdrop-filter: blur(6px);
+}
+.testimonial__mark {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  line-height: 1;
+  color: rgba(127, 168, 255, 0.4);
+  margin-bottom: var(--space-2);
+}
+.testimonial p {
+  color: var(--color-white);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+.testimonial cite {
+  display: block;
+  font-style: normal;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* "What can be automated" example grid */
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-3);
+}
+.emoji-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  transition: border-color var(--transition), background var(--transition);
+}
+.emoji-item:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.09); }
+.emoji-item .emoji { font-size: 1.35rem; flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .automation-icon { width: 44px; height: 44px; }
+  .automation-plan__price { font-size: 2.1rem; }
+}
+
+/* --------------------------------------------------------------------------
+   21. Automation quiz (automation.html) — dropdown & multi-select question
+   types, layered on top of the .quiz/.quiz-question shell from the
+   assessment quiz.
+   -------------------------------------------------------------------------- */
+.quiz-select-row { display: grid; gap: var(--space-5); }
+.quiz-continue-row { display: flex; justify-content: flex-end; margin-top: var(--space-2); }
+
+.checkbox-pill-group { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.checkbox-pill { position: relative; display: inline-flex; }
+.checkbox-pill input {
+  position: absolute;
+  opacity: 0;
+  width: 100%; height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.checkbox-pill span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-gray-700);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1.1rem;
+  transition: all var(--transition);
+}
+.checkbox-pill input:checked + span {
+  border-color: var(--color-blue);
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  font-weight: 600;
+}
+.checkbox-pill input:focus-visible + span { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+
+/* Personalized automation recommendation */
+.automation-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-2) 0 var(--space-6);
+}
+.automation-result-card {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+.automation-result-card h4 { font-size: var(--text-base); margin-bottom: var(--space-2); }
+.automation-result-card p { font-size: var(--text-sm); }
+.hours-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-green);
+  background: var(--color-green-light);
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-3);
+}
