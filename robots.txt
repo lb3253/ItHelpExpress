@@ -1,0 +1,7 @@
+# robots.txt — ItHelpExpress
+# https://www.ithelpexpress.com/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ithelpexpress.com/sitemap.xml
