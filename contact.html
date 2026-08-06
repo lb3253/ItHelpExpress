@@ -41,6 +41,7 @@
 
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html#services">Services</a></li>
+        <li><a href="automation.html">Automation</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="index.html#how-it-works">How It Works</a></li>
         <li><a href="assessment.html">Free IT Health Check</a></li>
@@ -246,6 +247,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="index.html#services">Services</a></li>
+            <li><a href="automation.html">AI Automation</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="index.html#how-it-works">How It Works</a></li>
             <li><a href="assessment.html">Free IT Health Check</a></li>
@@ -288,20 +290,34 @@
   <script src="js/chat.js"></script>
 
   <script>
-    /* If someone arrived from a plan CTA (contact.html?plan=Business),
-       pre-fill the message so they don't have to retype it. */
+    /* Pre-fill the form when someone arrives from a specific CTA elsewhere
+       on the site, so they don't have to retype what they already told us. */
     (function () {
-      var plan = new URLSearchParams(window.location.search).get('plan');
-      var valid = ['Starter', 'Business', 'Growth'];
-      if (!plan || valid.indexOf(plan) === -1) return;
-
+      var params = new URLSearchParams(window.location.search);
       var message = document.getElementById('message');
       var problem = document.getElementById('problem');
-      if (message && !message.value) {
-        message.value = "I'm interested in the " + plan + " plan.";
+
+      // contact.html?plan=Business — from a pricing-plan "Get Started" button.
+      var plan = params.get('plan');
+      var validPlans = ['Starter', 'Business', 'Growth'];
+      if (plan && validPlans.indexOf(plan) !== -1) {
+        if (message && !message.value) message.value = "I'm interested in the " + plan + " plan.";
+        if (problem && !problem.value) problem.value = 'Need ongoing support';
+        return;
       }
-      if (problem && !problem.value) {
-        problem.value = 'Need ongoing support';
+
+      // contact.html?topic=automation-audit — "Get My Free Automation Audit"
+      // CTAs on the homepage and automation.html. Optional &package= from the
+      // automation quiz result carries the recommended retainer tier along.
+      if (params.get('topic') === 'automation-audit') {
+        var pkg = params.get('package');
+        var validPkgs = ['Basic', 'Growth', 'Pro'];
+        if (problem && !problem.value) problem.value = 'AI automation';
+        if (message && !message.value) {
+          message.value = (pkg && validPkgs.indexOf(pkg) !== -1)
+            ? "I'd like to book my free 15-minute automation audit. Based on the quiz, the Automation " + pkg + " package looks like a fit."
+            : "I'd like to book my free 15-minute automation audit.";
+        }
       }
     })();
   </script>
