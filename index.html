@@ -3,247 +3,728 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ItHelpExpress — IT Services & AI Automation for Businesses</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --blue-dark: #0A2540; --blue-mid: #1B4F8A; --blue-bright: #2D7DD2;
-      --blue-light: #E8F1FB; --white: #FFFFFF; --gray-text: #4A5568;
-      --gray-light: #F7F9FC; --border: #D6E4F5;
+
+  <title>ItHelpExpress | Affordable IT Support for Small Business in DFW</title>
+  <meta name="description" content="No-contract IT support starting at $99/mo. Remote help, device monitoring, and AI automation for small businesses in the Dallas-Fort Worth area." />
+  <link rel="canonical" href="https://www.ithelpexpress.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ItHelpExpress | Affordable IT Support for Small Business in DFW" />
+  <meta property="og:description" content="No-contract IT support starting at $99/mo. Remote help, device monitoring, and AI automation for small businesses in the Dallas-Fort Worth area." />
+  <meta property="og:url" content="https://www.ithelpexpress.com/" />
+  <meta property="og:site_name" content="ItHelpExpress" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ItHelpExpress | Affordable IT Support for Small Business in DFW" />
+  <meta name="twitter:description" content="No-contract IT support starting at $99/mo. Remote help, device monitoring, and AI automation for small businesses in DFW." />
+
+  <meta name="theme-color" content="#0F1F3D" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ItHelpExpress",
+    "description": "No-contract IT support starting at $99/mo. Remote help, device monitoring, and AI automation for small businesses in the Dallas-Fort Worth area.",
+    "slogan": "Enterprise IT. Small Business Price.",
+    "url": "https://www.ithelpexpress.com/",
+    "email": "hello@ithelpexpress.com",
+    "telephone": "+1-555-555-0123",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Dallas-Fort Worth"
+    },
+    "serviceArea": {
+      "@type": "AdministrativeArea",
+      "name": "Dallas-Fort Worth"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Support Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "99",
+          "priceCurrency": "USD",
+          "description": "Up to 3 devices, next-day response, remote support and monitoring."
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "249",
+          "priceCurrency": "USD",
+          "description": "Up to 10 devices, same-day response, 1 on-site visit per month."
+        },
+        {
+          "@type": "Offer",
+          "name": "Growth",
+          "price": "449",
+          "priceCurrency": "USD",
+          "description": "Up to 20 devices, response within 2 hours, 2 on-site visits per month."
+        }
+      ]
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--blue-dark); background: var(--white); line-height: 1.6; }
-
-    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
-    .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--blue-dark); text-decoration: none; letter-spacing: -0.5px; }
-    .nav-logo span { color: var(--blue-bright); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-text); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--blue-dark); }
-    nav a.nav-cta { background: var(--blue-bright); color: var(--white); padding: 0.5rem 1.25rem; border-radius: 6px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-    nav a.nav-cta:hover { background: var(--blue-mid); }
-    @media (max-width: 640px) { .nav-links { display: none; } }
-
-    .hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%); color: var(--white); padding: 100px 5% 88px; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(45,125,210,0.3) 0%, transparent 60%); pointer-events: none; }
-    .hero-eyebrow { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #A8CFFF; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
-    .hero h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -1px; max-width: 820px; margin: 0 auto 1.25rem; }
-    .hero h1 span { color: #7BB8FF; }
-    .hero p { font-size: 1.125rem; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 2.5rem; }
-    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--blue-bright); color: var(--white); padding: 0.85rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .btn-primary:hover { background: #1f6abf; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: var(--white); padding: 0.85rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.35); transition: background 0.2s; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
-
-    .trust-bar { background: var(--blue-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 5%; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--blue-mid); }
-    .trust-item svg { flex-shrink: 0; }
-
-    .section { padding: 80px 5%; }
-    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 0.75rem; }
-    .section-title { font-family: 'Manrope', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; max-width: 560px; margin-bottom: 1rem; }
-    .section-sub { color: var(--gray-text); font-size: 1rem; max-width: 540px; margin-bottom: 3rem; }
-
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
-    .service-card { background: var(--gray-light); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: box-shadow 0.2s, transform 0.15s; }
-    .service-card:hover { box-shadow: 0 8px 24px rgba(10,37,64,0.1); transform: translateY(-2px); }
-    .service-card.featured { background: var(--blue-dark); border-color: var(--blue-mid); color: var(--white); }
-    .service-card.featured h3 { color: var(--white); }
-    .service-card.featured p { color: rgba(255,255,255,0.65); }
-    .service-card.featured .service-icon { background: rgba(45,125,210,0.25); }
-    .service-icon { width: 44px; height: 44px; background: var(--blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-    .service-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(45,125,210,0.2); color: #7BB8FF; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; }
-    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--blue-dark); }
-    .service-card p { font-size: 0.9rem; color: var(--gray-text); line-height: 1.6; }
-
-    .how-section { background: var(--blue-dark); color: var(--white); padding: 80px 5%; }
-    .how-section .section-label { color: #7BB8FF; }
-    .how-section .section-title { color: var(--white); }
-    .how-section .section-sub { color: rgba(255,255,255,0.65); }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .step-num { font-family: 'Manrope', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(45,125,210,0.4); line-height: 1; margin-bottom: 0.75rem; }
-    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--white); }
-    .step p { font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-
-    .why-section { padding: 80px 5%; background: var(--gray-light); }
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .why-item { display: flex; flex-direction: column; gap: 0.5rem; }
-    .why-dot { width: 10px; height: 10px; background: var(--blue-bright); border-radius: 50%; margin-bottom: 0.5rem; }
-    .why-item h3 { font-size: 1rem; font-weight: 700; color: var(--blue-dark); }
-    .why-item p { font-size: 0.875rem; color: var(--gray-text); line-height: 1.6; }
-
-    .contact-section { background: var(--white); padding: 80px 5%; }
-    .contact-inner { max-width: 640px; margin: 0 auto; }
-    .contact-inner .section-title, .contact-inner .section-label { text-align: center; }
-    .contact-inner .section-sub { text-align: center; margin-left: auto; margin-right: auto; }
-    .contact-form { display: grid; gap: 1rem; margin-top: 2.5rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--blue-dark); letter-spacing: 0.03em; }
-    .form-group input, .form-group select, .form-group textarea { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--blue-dark); background: var(--gray-light); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-bright); box-shadow: 0 0 0 3px rgba(45,125,210,0.15); background: var(--white); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .btn-submit { background: var(--blue-bright); color: var(--white); border: none; padding: 0.9rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s, transform 0.15s; width: 100%; }
-    .btn-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
-    .form-note { text-align: center; font-size: 0.8rem; color: var(--gray-text); margin-top: 0.75rem; }
-    .success-msg { display: none; background: #EAF7EE; border: 1px solid #86D9A2; color: #1A6B38; border-radius: 8px; padding: 1rem 1.25rem; font-size: 0.9rem; font-weight: 500; text-align: center; margin-bottom: 1rem; }
-
-    footer { background: var(--blue-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem 5%; font-size: 0.825rem; }
-    footer span { color: rgba(255,255,255,0.8); font-weight: 600; }
-    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .trust-bar { gap: 1.25rem; } }
-  </style>
+  }
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <nav>
-    <a class="nav-logo" href="#">ItHelp<span>Express</span></a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#how">How It Works</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a class="nav-cta" href="#contact">Get Started</a>
-  </nav>
+  <!-- ===================== NAV ===================== -->
+  <header class="site-nav">
+    <nav class="container nav-inner" aria-label="Main">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8z"/></svg>
+        </span>
+        ItHelp<span>Express</span>
+      </a>
 
-  <section class="hero">
-    <div class="hero-eyebrow">IT Services &amp; AI Automation for Businesses</div>
-    <h1>Your IT Department — <span>Without the Overhead</span></h1>
-    <p>From system administration and tech projects to AI-powered automation, we help businesses run smarter and faster — nationwide, remote, on demand.</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="#contact">Schedule a Consultation</a>
-      <a class="btn-ghost" href="#services">Explore Services</a>
-    </div>
-  </section>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="assessment.html">Free IT Health Check</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-  <div class="trust-bar">
-    <div class="trust-item"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Nationwide remote delivery</div>
-    <div class="trust-item"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>IT admin &amp; project support</div>
-    <div class="trust-item"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI automation specialists</div>
-    <div class="trust-item"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No long-term contracts</div>
-  </div>
-
-  <section class="section" id="services">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Enterprise-grade IT, built for growing businesses</h2>
-    <p class="section-sub">Whether you need day-to-day IT management, help with a specific project, or AI tools that save your team hours — we have you covered.</p>
-    <div class="services-grid">
-
-      <div class="service-card featured">
-        <div class="service-tag">Most Popular</div>
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#7BB8FF" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>IT System Administration</h3>
-        <p>We manage your IT environment so your team can focus on the work that matters. User accounts, permissions, software, security patches, and daily upkeep — all handled.</p>
+      <div class="nav-cta">
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <a class="btn btn--primary" href="contact.html">Get Started<span class="cta-full">Free</span></a>
       </div>
+    </nav>
+  </header>
 
-      <div class="service-card featured">
-        <div class="service-tag">High Impact</div>
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#7BB8FF" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3>AI Automation</h3>
-        <p>We build custom AI workflows that eliminate repetitive tasks — automating emails, data entry, reporting, approvals, and more using the latest AI tools and APIs.</p>
-      </div>
+  <main id="main">
 
-      <div class="service-card">
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
-        <h3>IT Project Management</h3>
-        <p>Migrating to the cloud, rolling out new software, or restructuring your infrastructure? We plan and execute technology projects from start to finish.</p>
-      </div>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge"><span class="dot" aria-hidden="true"></span> Enterprise IT. Small Business Price.</span>
 
-      <div class="service-card">
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Cybersecurity &amp; Compliance</h3>
-        <p>Protect your business with security audits, endpoint protection, access controls, and employee training — so you stay secure and ahead of threats.</p>
-      </div>
+          <h1>Your IT Department. <span class="accent">Without the IT Department Price.</span></h1>
 
-      <div class="service-card">
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-        <h3>Cloud Setup &amp; Migration</h3>
-        <p>Move your business to Microsoft 365, Google Workspace, or other cloud platforms — with zero downtime and a smooth transition for your team.</p>
-      </div>
+          <p class="hero-sub">
+            Flat monthly IT support for DFW small businesses — remote help, round-the-clock
+            device monitoring, and AI that handles the repetitive stuff before it reaches
+            your desk. No contracts, no jargon, no waiting on hold.
+          </p>
 
-      <div class="service-card">
-        <div class="service-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#1B4F8A" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></div>
-        <h3>Help Desk &amp; End-User Support</h3>
-        <p>Give your employees a reliable support line for tech issues, software questions, and device problems — without the cost of an in-house IT team.</p>
-      </div>
+          <div class="hero-actions">
+            <a class="btn btn--primary btn--lg" href="pricing.html">See Pricing</a>
+            <a class="btn btn--ghost btn--lg" href="assessment.html">Get a Free Assessment</a>
+          </div>
 
-    </div>
-  </section>
-
-  <section class="how-section" id="how">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Up and running in days, not months</h2>
-    <p class="section-sub">We keep onboarding simple so you get results fast — no long procurement cycles, no complicated contracts.</p>
-    <div class="steps">
-      <div class="step"><div class="step-num">01</div><h3>Free consultation</h3><p>Tell us about your business, your current setup, and what is slowing you down. We listen first.</p></div>
-      <div class="step"><div class="step-num">02</div><h3>Custom plan</h3><p>We put together a tailored service plan — only what you actually need, with clear pricing and no surprises.</p></div>
-      <div class="step"><div class="step-num">03</div><h3>We get to work</h3><p>Our team connects remotely and starts delivering. Most clients see measurable improvements within the first week.</p></div>
-      <div class="step"><div class="step-num">04</div><h3>Ongoing support</h3><p>We stay available as your business grows — adjusting, expanding, and improving as your needs change.</p></div>
-    </div>
-  </section>
-
-  <section class="why-section">
-    <div class="section-label">Why ItHelpExpress</div>
-    <h2 class="section-title">IT expertise without the enterprise price tag</h2>
-    <p class="section-sub">Small and mid-size businesses deserve the same quality of IT and automation support that large companies get. That is what we are here for.</p>
-    <div class="why-grid">
-      <div class="why-item"><div class="why-dot"></div><h3>Business-focused, not just technical</h3><p>We ask what outcome you need, not just what broke. Every solution is tied to a real business result.</p></div>
-      <div class="why-item"><div class="why-dot"></div><h3>Remote-first, nationwide reach</h3><p>Wherever your team is located, we can support them. No geographic limits, no travel fees.</p></div>
-      <div class="why-item"><div class="why-dot"></div><h3>AI-ready expertise</h3><p>We do not just maintain what you have — we help you adopt the tools that will keep you ahead of the curve.</p></div>
-      <div class="why-item"><div class="why-dot"></div><h3>Flexible engagements</h3><p>Monthly retainer, project-based, or one-time help — we work the way that makes sense for your business.</p></div>
-    </div>
-  </section>
-
-  <section class="contact-section" id="contact">
-    <div class="contact-inner">
-      <div class="section-label">Let's Talk</div>
-      <h2 class="section-title">Start with a free consultation</h2>
-      <p class="section-sub">Tell us about your business and what you are looking to improve. We will reach out within one business day.</p>
-      <div id="successMsg" class="success-msg">Message sent! We will be in touch within one business day.</div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Jane Smith" required /></div>
-          <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="company" placeholder="Acme Corp" /></div>
+          <p class="hero-note">Setup is remote and usually done the same week you sign up.</p>
         </div>
-        <div class="form-row">
-          <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" placeholder="jane@acmecorp.com" required /></div>
-          <div class="form-group"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" /></div>
-        </div>
-        <div class="form-group">
-          <label for="service">Service You Are Interested In</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Select a service</option>
-            <option>IT System Administration</option>
-            <option>AI Automation</option>
-            <option>IT Project Management</option>
-            <option>Cybersecurity &amp; Compliance</option>
-            <option>Cloud Setup &amp; Migration</option>
-            <option>Help Desk &amp; End-User Support</option>
-            <option>Not sure — I need guidance</option>
-          </select>
-        </div>
-        <div class="form-group"><label for="message">Tell Us About Your Business &amp; Needs</label><textarea id="message" name="message" placeholder="What does your business do? What IT challenges are you facing? What would you like to improve?" required></textarea></div>
-        <button type="submit" class="btn-submit">Send My Request</button>
-        <p class="form-note">We respond within one business day. No commitment required.</p>
-      </form>
-    </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 <span>ItHelpExpress</span>. All rights reserved. &nbsp;&middot;&nbsp; Nationwide IT Services &amp; AI Automation</p>
+        <!-- IT Health Score widget -->
+        <div class="health-card" role="img" aria-label="Live IT Health Score dashboard showing a score of 94 percent">
+          <div class="health-card__head">
+            <span class="health-card__title">IT Health Score</span>
+            <span class="health-card__live"><span class="dot" aria-hidden="true"></span> Live</span>
+          </div>
+
+          <div class="health-gauge">
+            <div class="gauge-ring">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <defs>
+                  <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563EB" />
+                    <stop offset="100%" stop-color="#16A34A" />
+                  </linearGradient>
+                </defs>
+                <circle class="gauge-track" cx="66" cy="66" r="56" />
+                <circle class="gauge-fill" id="gaugeFill" cx="66" cy="66" r="56" />
+              </svg>
+              <div class="gauge-value">
+                <div class="gauge-number" id="gaugeNumber">0%</div>
+                <div class="gauge-label">Healthy</div>
+              </div>
+            </div>
+
+            <div class="health-metrics">
+              <div class="metric-row" data-at="18">
+                <span class="metric-name">Devices monitored</span>
+                <span class="metric-state"><span class="pip" aria-hidden="true"></span> 12/12</span>
+              </div>
+              <div class="metric-row" data-at="38">
+                <span class="metric-name">Backups verified</span>
+                <span class="metric-state"><span class="pip" aria-hidden="true"></span> Current</span>
+              </div>
+              <div class="metric-row" data-at="58">
+                <span class="metric-name">Security patches</span>
+                <span class="metric-state"><span class="pip" aria-hidden="true"></span> Up to date</span>
+              </div>
+              <div class="metric-row" data-at="76" data-state="warn">
+                <span class="metric-name">Wi-Fi throughput</span>
+                <span class="metric-state"><span class="pip" aria-hidden="true"></span> Watching</span>
+              </div>
+              <div class="metric-row" data-at="90">
+                <span class="metric-name">Open tickets</span>
+                <span class="metric-state"><span class="pip" aria-hidden="true"></span> 0</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="health-card__foot">
+            This is what your dashboard looks like once we are running things.
+            <a href="assessment.html">Score your setup free →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST BAR ===================== -->
+    <div class="trust-bar">
+      <div class="container trust-bar__inner">
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          No contracts
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Cancel anytime
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          DFW-based
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          AI-powered support
+        </span>
+      </div>
+    </div>
+
+    <!-- ===================== PAIN POINTS ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Sound familiar?</span>
+          <h2>Most small businesses put up with tech that slows them down</h2>
+          <p>You didn't start a business to troubleshoot printers. Here's what we hear most.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card pain-card reveal">
+            <div class="card-icon card-icon--red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3>Tired of slow tech?</h3>
+            <p>
+              Computers that take four minutes to boot. Wi-Fi that drops during a client call.
+              Every one of those minutes is somebody on payroll waiting.
+            </p>
+            <p class="pain-answer"><strong>We fix it:</strong> monitoring catches slowdowns before your team does, and we tune the machines you already own instead of selling you new ones.</p>
+          </article>
+
+          <article class="card pain-card reveal">
+            <div class="card-icon card-icon--red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Overpaying for IT?</h3>
+            <p>
+              Hourly consultants bill you for the drive over. Big MSPs lock you into
+              three-year contracts sized for a company ten times bigger than yours.
+            </p>
+            <p class="pain-answer"><strong>We fix it:</strong> one flat monthly rate from $99, no contract, and you can cancel the month you stop needing us.</p>
+          </article>
+
+          <article class="card pain-card reveal">
+            <div class="card-icon card-icon--red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.66A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/><path d="m2 2 20 20"/></svg>
+            </div>
+            <h3>No one to call when things break?</h3>
+            <p>
+              Right now your IT plan is "ask whoever in the office is best with computers."
+              That works right up until the day it really doesn't.
+            </p>
+            <p class="pain-answer"><strong>We fix it:</strong> a real number that a real person answers, with response times written into your plan — not buried in fine print.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section section--navy" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps. Most clients are fully set up within a week.</h2>
+          <p>No discovery phase, no six-figure assessment, no 40-page proposal.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <h3>Pick a plan</h3>
+            <p>
+              Count your devices, pick the tier that covers them, and you're done.
+              Not sure? Take the free health check and we'll tell you straight —
+              including when the cheapest plan is the right one.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <h3>We set everything up remotely</h3>
+            <p>
+              We install monitoring, check your backups, patch what's out of date, and
+              document your setup. It happens in the background while your team keeps working.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <h3>We handle it so you don't have to</h3>
+            <p>
+              From then on it's our problem. Something breaks, you message us. Something is
+              about to break, we've usually already fixed it and told you afterward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">What you get</span>
+          <h2>Everything a small business actually needs</h2>
+          <p>Not a catalog of enterprise products you'll never use — the six things that keep a 1–20 person business running.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Remote Support</h3>
+            <p>Message us and we connect straight to the machine. Most issues — email, printers, software, that one program that stopped opening — get fixed without anyone driving anywhere.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Device Monitoring</h3>
+            <p>Every computer reports in around the clock. Failing drives, full disks, and machines running hot get flagged to us before they become your morning.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+            </div>
+            <h3>AI Automation Workflows</h3>
+            <p>The repetitive thing somebody does every Friday — retyping invoices, chasing timesheets, sorting the inbox — we build it once and it runs itself from then on.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+            </div>
+            <h3>Employee Onboarding</h3>
+            <p>New hire starts Monday? Their laptop, email, logins, and shared drives are ready Monday. No scrambling, no leftover accounts when someone leaves.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h3>Cloud Backup</h3>
+            <p>Your files backed up automatically and — this is the part most people skip — actually tested. A backup nobody has restored from is just a hope.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7 16 12l7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <h3>Smart Office Setup</h3>
+            <p>Cameras, door access, conference room displays, guest Wi-Fi. Installed, configured, and shown to your team in plain English.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Pricing</span>
+          <h2>Flat monthly plans. No contracts. Ever.</h2>
+          <p>Pick by how many devices you have. Move up, move down, or cancel any month — it takes one message.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <article class="plan reveal">
+            <h3 class="plan__name">Starter</h3>
+            <p class="plan__blurb">Solo operators and very small teams.</p>
+            <div class="plan__price">
+              <span class="plan__amount">$99</span>
+              <span class="plan__period">/month</span>
+            </div>
+            <p class="plan__sub">No contract. Cancel anytime.</p>
+
+            <dl class="plan__specs">
+              <div class="plan__spec"><dt>Devices</dt><dd>Up to 3</dd></div>
+              <div class="plan__spec"><dt>Response time</dt><dd>Next day</dd></div>
+              <div class="plan__spec"><dt>On-site visits</dt><dd>None</dd></div>
+            </dl>
+
+            <ul class="plan__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Unlimited remote support</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 24/7 device monitoring</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Monthly health report</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Wi-Fi, printer, email &amp; software help</li>
+            </ul>
+
+            <a class="btn btn--secondary btn--block" href="contact.html?plan=Starter">Get Started</a>
+          </article>
+
+          <!-- Business -->
+          <article class="plan plan--featured reveal">
+            <span class="plan__flag">Most popular</span>
+            <h3 class="plan__name">Business</h3>
+            <p class="plan__blurb">The sweet spot for most DFW small businesses.</p>
+            <div class="plan__price">
+              <span class="plan__amount">$249</span>
+              <span class="plan__period">/month</span>
+            </div>
+            <p class="plan__sub">No contract. Cancel anytime.</p>
+
+            <dl class="plan__specs">
+              <div class="plan__spec"><dt>Devices</dt><dd>Up to 10</dd></div>
+              <div class="plan__spec"><dt>Response time</dt><dd>Same day</dd></div>
+              <div class="plan__spec"><dt>On-site visits</dt><dd>1 per month</dd></div>
+            </dl>
+
+            <ul class="plan__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Everything in Starter</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Same-day response</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> One on-site visit each month</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> New-hire setup support</li>
+            </ul>
+
+            <a class="btn btn--primary btn--block" href="contact.html?plan=Business">Get Started</a>
+          </article>
+
+          <!-- Growth -->
+          <article class="plan reveal">
+            <h3 class="plan__name">Growth</h3>
+            <p class="plan__blurb">Teams where downtime costs real money.</p>
+            <div class="plan__price">
+              <span class="plan__amount">$449</span>
+              <span class="plan__period">/month</span>
+            </div>
+            <p class="plan__sub">No contract. Cancel anytime.</p>
+
+            <dl class="plan__specs">
+              <div class="plan__spec"><dt>Devices</dt><dd>Up to 20</dd></div>
+              <div class="plan__spec"><dt>Response time</dt><dd>Within 2 hours</dd></div>
+              <div class="plan__spec"><dt>On-site visits</dt><dd>2 per month</dd></div>
+            </dl>
+
+            <ul class="plan__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Everything in Business</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Two-hour response window</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Two on-site visits each month</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Priority scheduling for projects</li>
+            </ul>
+
+            <a class="btn btn--secondary btn--block" href="contact.html?plan=Growth">Get Started</a>
+          </article>
+        </div>
+
+        <div class="included-band reveal">
+          <h3>Included in every plan</h3>
+          <ul class="included-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Remote support</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Device monitoring</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Monthly report</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Basic troubleshooting: Wi-Fi, printers, email, software</li>
+          </ul>
+        </div>
+
+        <p class="text-center mt-8">
+          <a class="btn btn--secondary" href="pricing.html">See the full pricing breakdown →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== ADD-ONS ===================== -->
+    <section class="section section--alt" id="add-ons">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Add-ons</span>
+          <h2>Bolt on only what you need</h2>
+          <p>Every price below is the whole price. Add or drop any of these month to month.</p>
+        </div>
+
+        <div class="addon-grid">
+          <div class="addon reveal">
+            <div><div class="addon__name">Extra device</div><div class="addon__desc">Past your plan's device count</div></div>
+            <div class="addon__price">+$10<small>per device / mo</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Additional on-site visit</div><div class="addon__desc">Beyond what your plan includes</div></div>
+            <div class="addon__price">$99<small>each</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">AI automation workflow</div><div class="addon__desc">Built, tested, and handed over</div></div>
+            <div class="addon__price">$149<small>one-time each</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Priority 2-hr response</div><div class="addon__desc">Upgrade any plan's response time</div></div>
+            <div class="addon__price">+$49<small>per month</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Employee tech onboarding</div><div class="addon__desc">Full setup for a new hire</div></div>
+            <div class="addon__price">$79<small>per new hire</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Security &amp; antivirus</div><div class="addon__desc">Managed protection on every device</div></div>
+            <div class="addon__price">+$29<small>per month</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Cloud backup monitoring</div><div class="addon__desc">Backups verified, not just scheduled</div></div>
+            <div class="addon__price">+$39<small>per month</small></div>
+          </div>
+          <div class="addon reveal">
+            <div><div class="addon__name">Smart office / camera setup</div><div class="addon__desc">Cameras, access, meeting rooms</div></div>
+            <div class="addon__price">$199<small>one-time</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Straight answers</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is there really no contract?</summary>
+            <div class="faq-answer">
+              <p>Really. You pay month to month and you can stop any time. We'd rather keep your business by being worth the money than by holding you to a signature you regretted in month four. If you cancel, we hand over your documentation and account access — it's yours.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How fast do you actually respond?</summary>
+            <div class="faq-answer">
+              <p>Next business day on Starter, same day on Business, and within two hours on Growth. Those are the windows we commit to during business hours — in practice most remote issues get picked up a lot faster than that. If you need the two-hour window but not the rest of Growth, you can add it to any plan for $49/month.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What devices and software do you cover?</summary>
+            <div class="faq-answer">
+              <p>Windows PCs, Macs, laptops, servers, printers, network gear, and phones/tablets used for work. On the software side: Microsoft 365, Google Workspace, email, VPNs, browsers, and the everyday business apps your team lives in. If you run something unusual — industry-specific software, a point-of-sale system — tell us up front and we'll say honestly whether we can support it.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How does the AI part actually help me?</summary>
+            <div class="faq-answer">
+              <p>Two ways. First, on our side: AI triages incoming issues and watches monitoring data, so common problems get diagnosed the moment you report them instead of waiting in a queue. Second, on your side: we build custom automation workflows for the repetitive tasks eating your team's week — pulling data between systems, generating recurring reports, routing invoices. Those are $149 each, one time, and they keep working after that.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you only work with businesses in DFW?</summary>
+            <div class="faq-answer">
+              <p>On-site visits are DFW only — Dallas, Fort Worth, Plano, Arlington, Irving, and the surrounding suburbs. Remote support works anywhere, so if you're outside the metroplex the Starter plan may still be a good fit. Just know we can't drive out to you, and we'll tell you that before you sign up rather than after.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What's the cancellation policy?</summary>
+            <div class="faq-answer">
+              <p>Message us before your next billing date and that's it — no exit fee, no 30-day notice period, no phone call where we try to talk you out of it. Your current month finishes out and nothing renews. If you come back later, we'll pick up where we left off.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA + FORM ===================== -->
+    <section class="section section--alt" id="contact">
+      <div class="container container-narrow">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Get started</span>
+          <h2>Ready to stop worrying about tech?</h2>
+          <p>Tell us what's going on. A real person reads every message and replies within one business hour.</p>
+        </div>
+
+        <div class="panel" id="contactFormPanel">
+          <form class="form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Jordan Reyes" required autocomplete="name" />
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="businessName">Business name</label>
+                <input type="text" id="businessName" name="businessName" placeholder="Reyes Dental" autocomplete="organization" />
+                <span class="error-msg" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required autocomplete="email" />
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(214) 555-0142" required autocomplete="tel" />
+                <span class="error-msg" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="problem">What's the main IT problem? <span class="req" aria-hidden="true">*</span></label>
+              <select id="problem" name="problem" required>
+                <option value="">Choose one…</option>
+                <option>Slow computers</option>
+                <option>Network/Wi-Fi</option>
+                <option>Need ongoing support</option>
+                <option>Setting up new office</option>
+                <option>AI automation</option>
+                <option>Other</option>
+              </select>
+              <span class="error-msg" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="message">Anything else we should know? <span class="hint">(optional)</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="Five people, about eight devices, and the Wi-Fi drops every afternoon."></textarea>
+              <span class="error-msg" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block btn--lg">Get My Free Assessment</button>
+            <p class="form-note">No contract, no obligation, no sales call unless you ask for one.</p>
+          </form>
+        </div>
+
+        <!-- Confirmation (revealed on submit) -->
+        <div class="panel panel--success" id="confirmation" hidden tabindex="-1">
+          <div class="success-head">
+            <span class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <h2>Got it, <span id="confirmName">there</span> — we'll be in touch within 1 business hour.</h2>
+              <p>Check your inbox (and spam, just in case). If it's urgent, call or text <strong>(555) 555-0123</strong> and skip the queue.</p>
+            </div>
+          </div>
+
+          <div class="triage-box" id="triageBox">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 21h6"/></svg>
+              Here's what to expect:
+            </h3>
+            <div class="loading-line">
+              <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+              Putting together your next steps…
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8z"/></svg>
+            </span>
+            ItHelp<span>Express</span>
+          </a>
+          <p class="footer-blurb">Enterprise IT. Small Business Price. Flat-rate IT support and AI automation for small businesses across Dallas-Fort Worth.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="assessment.html">Free IT Health Check</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#add-ons">Add-ons</a></li>
+            <li><a href="#" data-open-chat>Ask IT (AI chat)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:hello@ithelpexpress.com">hello@ithelpexpress.com</a></li>
+            <li><a href="tel:+15555550123">(555) 555-0123</a></li>
+            <li><span>Dallas-Fort Worth, TX</span></li>
+            <li><span>Mon–Fri, 8am–6pm CT</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025&ndash;<span id="footerYear">2025</span> ItHelpExpress. All rights reserved.</span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          No contracts &middot; Cancel anytime
+        </span>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    const successMsg = document.getElementById('successMsg');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      try {
-        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (res.ok) { form.reset(); successMsg.style.display = 'block'; successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-      } catch { alert('Something went wrong. Please try again.'); }
-    });
-  </script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/chat.js"></script>
 </body>
 </html>
